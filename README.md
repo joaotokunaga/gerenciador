@@ -1,8 +1,7 @@
 Protótipo: n/a
 
-OK - Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.<br />
-OK - Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
-
+<s>Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.</s><br />
+<s>Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).</s><br />
 Apresentar as telas com layout responsivo usando ou não algum framework CSS.<br />
 Construir páginas web com o conceito de componentes. <br />
 Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.<br />
