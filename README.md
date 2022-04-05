@@ -1,6 +1,6 @@
 Protótipo: n/a
 
-OK - Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
+OK - Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.<br />
 OK - Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
 
 Apresentar as telas com layout responsivo usando ou não algum framework CSS.
