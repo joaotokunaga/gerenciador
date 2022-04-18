@@ -1,4 +1,4 @@
-<b>Protótipo:</b> https://prototipo-frameworks.tokunaga.com.br/
+<b>Protótipo:</b> https://www.figma.com/file/YXDDnth2p2xB0cxmrFUCnG/Gerenciador-de-Estudos?node-id=0%3A1 | https://prototipo-frameworks.tokunaga.com.br/
 
 <s>Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.</s><br />
 <s>Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).</s><br />
