@@ -2,7 +2,7 @@
 
 <s>Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.</s><br />
 <s>Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).</s><br />
-Apresentar as telas com layout responsivo usando ou não algum framework CSS.<br />
+<s>Apresentar as telas com layout responsivo usando ou não algum framework CSS.</s><br />
 Construir páginas web com o conceito de componentes. <br />
 Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.<br />
 Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).<br />
