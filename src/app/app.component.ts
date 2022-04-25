@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gerenciador';
+  style = {
+    backgroundColor: 'red',
+    color: 'white',
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    animation: 'blinker 1s step-start infinite'
+  }
+  title = 'gerenciador'
+  twoWay: string
+
+  constructor() {
+    this.twoWay = 'troque esse texto pls'
+  }
 }

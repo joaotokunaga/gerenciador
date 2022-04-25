@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  data: Date
+
+  constructor() {
+    this.data = new Date()
+  }
 
   ngOnInit(): void {
+  }
+
+  formatarData(): string {
+    return this.data.getDate() + '/' + (this.data.getMonth() + 1 < 10 ? '0' + (this.data.getMonth() + 1) : (this.data.getMonth() + 1)) + '/' + this.data.getFullYear() + ' ' + this.data.getHours() + ':' + this.data.getMinutes()
   }
 
 }
