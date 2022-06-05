@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { CicloComponent } from './paginas/ciclo/ciclo.component';
 import { DisciplinasComponent } from './paginas/disciplinas/disciplinas.component';
 import { RotasComParametroComponent } from './paginas/rotas-com-parametro/rotas-com-parametro.component';
 import { PassandoPropriedadesComponent } from './paginas/passando-propriedades/passando-propriedades.component';
+import { FormularioComponent } from './paginas/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { PassandoPropriedadesComponent } from './paginas/passando-propriedades/p
     CicloComponent,
     DisciplinasComponent,
     RotasComParametroComponent,
-    PassandoPropriedadesComponent
+    PassandoPropriedadesComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

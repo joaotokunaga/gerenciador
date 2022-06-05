@@ -1,21 +1,19 @@
 <div class="tabs is-fullwidth">
-	<ul>
-		<!-- <li class="is-active"> -->
-		<li [class]="(active == 'ciclo') ? 'is-active' : ''">
-			<a routerLink="">
-				<span class="mdi mdi-24px mdi-dots-circle"></span>&nbsp;&nbsp;<span>Ciclo de estudos</span>
-			</a>
-		</li>
-		<li [class]="(active == 'disciplinas') ? 'is-active' : ''">
-			<a routerLink="disciplinas">
-				<span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Disciplinas</span>
-			</a>
-		</li>
-		<li [class]="(active == 'rotas') ? 'is-active' : ''">
-			<a [routerLink]="['/rotas-com-parametro']" [queryParams]="{ paramUm: 'valor1', paramDois: 'valor2' }">
-				<span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Teste rota com
-					parâmetros</span>
-			</a>
-		</li>
-	</ul>
+    <ul>
+        <li [class]="(active == 'ciclo') ? 'is-active' : ''">
+            <a routerLink="">
+                <span class="mdi mdi-24px mdi-dots-circle"></span>&nbsp;&nbsp;<span>Ciclo de estudos</span>
+            </a>
+        </li>
+        <li [class]="(active == 'disciplinas') ? 'is-active' : ''">
+            <a routerLink="disciplinas">
+                <span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Disciplinas</span>
+            </a>
+        </li>
+        <li [class]="(active == 'form') ? 'is-active' : ''">
+            <a routerLink="form">
+                <span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Formulário atividade 09</span>
+            </a>
+        </li>
+    </ul>
 </div>
