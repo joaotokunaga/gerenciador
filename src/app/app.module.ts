@@ -15,24 +15,24 @@ import { PassandoPropriedadesComponent } from './paginas/passando-propriedades/p
 import { FormularioComponent } from './paginas/formulario/formulario.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent,
-    CicloComponent,
-    DisciplinasComponent,
-    RotasComParametroComponent,
-    PassandoPropriedadesComponent,
-    FormularioComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		FooterComponent,
+		MenuComponent,
+		CicloComponent,
+		DisciplinasComponent,
+		RotasComParametroComponent,
+		PassandoPropriedadesComponent,
+		FormularioComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		ReactiveFormsModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
