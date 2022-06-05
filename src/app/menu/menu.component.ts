@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 			if (event instanceof NavigationStart) {
 				if (event.url == '/') this.active = 'ciclo'
 				if (event.url == '/disciplinas') this.active = 'disciplinas'
-				if (event.url.split('?')[0] == '/rotas-com-parametro') this.active = 'rotas'
+				if (event.url == '/form') this.active = 'form'
 			}
 		})
 	}

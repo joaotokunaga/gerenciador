@@ -1,0 +1,108 @@
+<h1>Validação de formulário para Feature Atividade 09</h1>
+<br />
+<div style="width: 30%;">
+	<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+		<div class="field">
+			<label class="label">Nome *</label>
+			<div class="control">
+				<input class="input" type="text" placeholder="Insira seu nome" formControlName="nome" required>
+			</div>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('nome')!.touched && formCadastro.get('nome')!.hasError('required')">O nome é
+				obrigatório!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('nome')!.touched && formCadastro.get('nome')!.hasError('pattern')">O nome
+				somente deve conter letras e espaços (letras acentuadas são permitidas)!</small>
+		</div>
+
+		<div class="field">
+			<label class="label">E-mail *</label>
+			<input class="input" type="email" placeholder="Insira seu e-mail" formControlName="email" required>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('email')!.touched && formCadastro.get('email')!.hasError('required')">O e-mail é
+				obrigatório!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('email')!.touched && formCadastro.get('email')!.hasError('email')">O formato do
+				e-mail é inválido!</small>
+		</div>
+
+		<div class="field">
+			<label class="label">Senha *</label>
+			<div class="control">
+				<input class="input" type="password" formControlName="senha" required>
+			</div>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('senha')!.touched && formCadastro.get('senha')!.hasError('required')">A senha é
+				obrigatória!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('senha')!.touched && formCadastro.get('senha')!.hasError('minlength')">A senha
+				deve conter pelo menos 6 caracteres!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('senha')!.touched && formCadastro.get('senha')!.hasError('maxlength')">A senha
+				deve conter no máximo 10 caracteres!</small>
+		</div>
+
+		<div class="field">
+			<label class="label">Confirme a senha *</label>
+			<div class="control">
+				<input class="input" type="password" formControlName="confirmaSenha" required>
+			</div>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('confirmaSenha')!.touched && formCadastro.get('confirmaSenha')!.hasError('required')">A
+				confirmação da senha é obrigatória!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('confirmaSenha')!.touched && formCadastro.errors != null && formCadastro.errors!['naoConfirma']">As
+				senhas não correspondem!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('confirmaSenha')!.touched && formCadastro.get('confirmaSenha')!.hasError('minlength')">A
+				senha deve conter pelo menos 6 caracteres!</small>
+			<small class="help is-danger"
+				*ngIf="formCadastro.get('confirmaSenha')!.touched && formCadastro.get('confirmaSenha')!.hasError('maxlength')">A
+				senha deve conter no máximo 10 caracteres!</small>
+		</div>
+
+		<div class="field">
+			<label class="label">Comentários</label>
+			<div class="control">
+				<textarea class="textarea" placeholder="Comentários são opcionais"
+					formControlName="comentarios"></textarea>
+			</div>
+		</div>
+
+		<div class="field is-grouped">
+			<div class="control">
+				<input class="button is-link" type="submit" value="Enviar" [disabled]="!formCadastro.valid">
+			</div>
+		</div>
+	</form>
+</div>
+
+<br />
+<div *ngIf="cadastrados.length > 0">
+	<h1>Items cadastrados: </h1>
+	<br />
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>Senha</th>
+				<th>Senha confirmada</th>
+				<th>Comentários</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of cadastrados; let i = index">
+				<th>{{ item.nome }}</th>
+				<td>{{ item.email }}</td>
+				<td>{{ item.senha }}</td>
+				<td>{{ item.confirmaSenha }}</td>
+				<td>{{ item.comentarios }}</td>
+				<td>
+					<button class="button is-danger" (click)="deletar(i)">Deletar</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
