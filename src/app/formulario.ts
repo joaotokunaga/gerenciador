@@ -1,7 +1,8 @@
 export class Formulario {
-    nome: string = ''
-    email: string = ''
-    senha: string = ''
-    confirmaSenha: string = ''
-    comentarios: string = ''
+	id?: number
+	nome: string = ''
+	email: string = ''
+	senha: string = ''
+	confirmaSenha?: string = ''
+	comentarios: string = ''
 }
