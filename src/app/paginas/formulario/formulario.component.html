@@ -93,14 +93,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let item of cadastrados; let i = index">
+			<tr *ngFor="let item of cadastrados">
 				<th>{{ item.nome }}</th>
 				<td>{{ item.email }}</td>
 				<td>{{ item.senha }}</td>
 				<td>{{ item.confirmaSenha }}</td>
 				<td>{{ item.comentarios }}</td>
 				<td>
-					<button class="button is-danger" (click)="deletar(i)">Deletar</button>
+					<button class="button is-danger" (click)="deletar(item.id)">Deletar</button>
 				</td>
 			</tr>
 		</tbody>
