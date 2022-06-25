@@ -1,0 +1,66 @@
+<div>
+	<h1 class="is-title is-size-4 has-text-weight-bold">Detalhes do estudo</h1>
+	<h2>Bloco de <b class="has-text-link">{{
+			bloco.disciplinaNome | titlecase }}</b> da rodada <b>#{{ rodadaAtual }}</b> com tempo
+		total de
+		<b class="has-text-danger">{{ bloco.tempo
+			}}</b>
+	</h2>
+	<h2 *ngIf="estudos">
+		Estudo total realizado para este bloco: <b [ngClass]="utils.retornaClasseCodigo(statusEstudos.codigo)">{{
+			statusEstudos.totalEstudado }}</b> -
+		<span [ngClass]="utils.retornaClasseCodigo(statusEstudos.codigo)">{{ statusEstudos.mensagem }}</span>
+	</h2>
+	<hr class="mt-2 mb-1" />
+	<div class="columns is-multiline">
+		<div class="column is-two-thirds-desktop is-full-tablet" *ngIf="estudos.length > 0; else semEstudos">
+			<div class="card mt-3" *ngFor="let estudo of estudos; let index = index">
+				<div class="card-content p-2">
+					<div class="content">
+						<div class="mt-0 ml-2">
+							<p class="mb-1">Estudo realizado no dia <b>{{ estudo.data }}</b></p>
+							<p class="mb-1">Tempo estudado: <b>{{ estudo.tempo }}</b></p>
+							<div *ngIf="estudo.questoesRealizadas != null">
+								<p class="mb-1">Questões realizadas: <b>{{ estudo.questoesAcertadas }} acerto(s) de {{
+										estudo.questoesRealizadas }} total.</b></p>
+								<p class="mb-1">Percentual de acerto: <b>{{ estudo.questoesAcertadas! /
+										estudo.questoesRealizadas! * 100
+										| number: '1.2-2'
+										}}%</b></p>
+							</div>
+							<hr class="my-3" />
+							<p class="mb-1 has-text-weight-bold">Conteúdo estudado:</p>
+							<p>{{ estudo.conteudo }}</p>
+							<hr class="my-3" />
+						</div>
+						<div class="has-text-centered mt-3 mb-2">
+							<button class="button is-info is-small" type="button"
+								(click)="editarEstudo(estudo.id!)">Editar estudos</button>
+							&nbsp;
+							<button class="button is-danger is-small" type="button"
+								(click)="deletarEstudo(estudo.id!)">Deletar estudos</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ng-template #semEstudos>
+			<div class="column mt-4 is-two-thirds-desktop is-full-tablet">
+				<article class="message is-danger">
+					<div class="message-body">
+						Não há estudos cadastrados para este bloco ainda.
+					</div>
+				</article>
+			</div>
+		</ng-template>
+		<div class="column is-one-third-desktop">
+			<h3 class="has-text-link is-title has-text-weight-bold is-size-5 mb-5">Ações</h3>
+			<button *ngIf="!mostrarFormCadastro" type="button" class="button is-link"
+				(click)="cadastrarEstudos()">Adicionar
+				novos estudos</button>
+			<app-formulario-estudos [bloco]="bloco" [estudo]="estudoEdit" *ngIf="mostrarFormCadastro"
+				(eventoFecharFormulario)="fecharFormulario(true)" (eventoNovoEstudo)="novoEstudo($event)">
+			</app-formulario-estudos>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+<form [formGroup]="formulario" (ngSubmit)="cadastrarEstudos()">
+	<div class="field">
+		<label class="label">Tempo de estudo <span class="has-text-danger is-title">*</span></label>
+		<div class="control">
+			<div *ngIf="estudo == undefined; else estudoExiste">
+				<input class="input is-small" type="text" maxlength="5" placeholder="Formato h:mm"
+					formControlName="tempo">
+			</div>
+			<ng-template #estudoExiste>
+				<input class="input is-small" type="text" formControlName="tempo">
+				<input type="hidden" formControlName="id">
+			</ng-template>
+			<div *ngIf="tempo?.invalid && (tempo?.dirty || tempo?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="tempo?.errors?.['required']">
+					O tempo do estudo é obrigatório.
+				</div>
+				<div *ngIf="tempo?.errors?.['pattern']">
+					O tempo deve estar no formato h:mm ou hh:mm.
+				</div>
+				<div *ngIf="tempo?.errors?.['tempo']">
+					O tempo deve ser um formato de horas válido e maior que zero.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Data de realização <span class="has-text-danger is-title">*</span></label>
+		<div class="control">
+			<div>
+				<input class="input is-small" type="text" maxlength="10" placeholder="Formato dd/mm/aaaa"
+					formControlName="data">
+			</div>
+			<div *ngIf="data?.invalid && (data?.dirty || data?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="data?.errors?.['required']">
+					A data do estudo é obrigatória.
+				</div>
+				<div *ngIf="data?.errors?.['data']">
+					A data deve ser válida no formato deve ser dd/mm/aaaa e não pode ser uma data maior que hoje.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Quantidade de questões realizadas</label>
+		<div class="control">
+			<div>
+				<input class="input is-small" type="text" maxlength="3" formControlName="questoesRealizadas">
+			</div>
+			<div *ngIf="questoesRealizadas?.invalid && (questoesRealizadas?.dirty || questoesRealizadas?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="questoesRealizadas?.errors?.['pattern']">
+					A quantidade de questões realizadas ser um número válido.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Quantidade de questões acertadas</label>
+		<div class="control">
+			<div>
+				<input class="input is-small" type="text" maxlength="3" formControlName="questoesAcertadas">
+			</div>
+			<div *ngIf="(questoesAcertadas?.invalid && (questoesAcertadas?.dirty || questoesAcertadas?.touched)) || formulario.getError('questoesAcertadas')"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="questoesAcertadas?.errors?.['pattern']">
+					A quantidade de questões acertadas ser um número válido.
+				</div>
+				<div
+					*ngIf="formulario.getError('questoesAcertadas') && (questoesAcertadas?.dirty || questoesAcertadas?.touched)">
+					A quantidade de questões acertadas deve ser menor ou igual a quantidade realizada.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Conteúdo estudado <span class="has-text-danger is-title">*</span></label>
+		<div class="control">
+			<div>
+				<textarea class="textarea is-small"
+					placeholder="Informe o conteúdo que foi estudado e qualquer outra coisa relevante do estudo."
+					rows="5" formControlName="conteudo"></textarea>
+			</div>
+			<div *ngIf="conteudo?.invalid && (conteudo?.dirty || conteudo?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="conteudo?.errors?.['required']">
+					O conteúdo estudado é obrigatório.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mb-3"><span class="has-text-danger is-title is-size-7">* campos obrigatórios</span></div>
+	<div class="field is-grouped">
+		<div class="control">
+			<button class="button is-link" [disabled]="!formulario?.valid">{{ buttonText }}</button>
+		</div>
+		<div class="control">
+			<button type="button" class="button is-link is-light" (click)="fecharFormulario()">Cancelar</button>
+		</div>
+	</div>
+</form>

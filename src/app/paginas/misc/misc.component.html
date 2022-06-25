@@ -1,0 +1,398 @@
+<div class="column" *ngIf="pagina == 'sobre'">
+	<h1 class="is-size-1 is-title has-text-weight-bold has-text-link">Sobre o Gerenciador de Estudos</h1>
+	<div class="mx-5">
+		<p class="mt-3 has-text-justified">O gerenciador de estudos é um sistema que já existe e está em produção há
+			mais de
+			5 anos, atendendo
+			majoritariamente alunos estudantes de concursos públicos para os mais variados cargos, em sua maioria para a
+			carreira fiscal. Concebido em PHP (CakePHP) com MySQL, jQuery e Bootstrap, posteriormente foi atualizado
+			para o framework
+			Laravel de
+			PHP, com a utilização do framework de JavaScript VueJS na versão 2, MySQL e Bootstrap.
+		<p class="mt-3 has-text-justified">Esta versão é uma versão <i>light</i> do gerenciador
+			para atender os requisitos da disciplina de <b>Frameworks Web</b> da pós graduação em Linguagem de
+			Programação
+			Java
+			da Universidade Tecnológica Federal do Paraná (UTFPR - Cornélio Procópio), desenvolvida em JavaScript
+			utilizando o framework Angular versão 13.3 e uma fake API para simulação de back-end chamada JSON-Server,
+			com o framework web Bulma CSS (quase foi utilizado o Bootstrap mas este tem um sério problema: ele tem cara
+			de Bootstrap, que é a mesma cara de uma boa parte dos sites da internet <span
+				class="mdi mdi-18px mdi-emoticon-lol-outline"></span>). Do
+			Angular
+			foram utilizados todos os conceitos apresentados durante o curso (conforme pode ser verificado ponto a ponto
+			pelo checklist a seguir), prezando sempre pelas melhores práticas, tanto
+			do framework, quando
+			de arquitetura de sistemas e engenharia de software no geral.</p>
+		<p class="mt-3 has-text-justified">No bimestre passado foi desenvolvida, também, uma versão <i>light</i>, em
+			Java, para
+			a disciplina de <b>Android</b> com funcionalidades parecidas.</p>
+	</div>
+	<hr />
+	<h2 class="mt-0 mb-4 is-size-3 is-title has-text-weight-bold has-text-link">Checklist</h2>
+	<div class="mx-5">
+		<p><input type="checkbox" checked /> &nbsp;Criar o repositório no GitHub com a estrutura do Gitflow, ou seja,
+			branches
+			main e develop.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> GitHub
+			<a href="https://github.com/joaotokunaga/gerenciador"
+				target="_new">https://github.com/joaotokunaga/gerenciador</a> branches Develop e Features das atividades
+			das aulas semanais.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Usar componentes de algum framework CSS (Bootstrap, Materialize ou
+			outro)
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Framework Bulma
+			CSS <a href="https://bulma.io/" target="_new">https://bulma.io/</a>
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Apresentar as telas com layout responsivo usando ou não algum
+			framework
+			CSS.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Todas as telas
+			foram
+			pensadas na responsividade, o exemplo mais fácil de verificar é o menu, se mudar para uma resolução mobile o
+			texto desaparece para que se encaixe melhor na UI.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Construir páginas web com o conceito de componentes.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Esta página é um
+			componente. <span class="mdi mdi-18px mdi-emoticon-happy-outline"></span> As
+			áreas da UI foram todas componentizadas, o Header, Footer, Menu, Ciclo de estudos (formulário de cadastro do
+			ciclo, visualização dos detalhes do bloco, formulário de cadastro de estudos são todos componentes
+			diferentes), Disciplinas e a página de
+			informações. Todos separados em componentes.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Criar o layout da aplicação com componentes, ou seja, o cabeçalho e
+			rodapé
+			precisam ser componentes.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Usar pelo menos dois tipos de data-binding (Interpolation, Property
+			Binding,
+			Event Binding e Two Way Data
+			Binding).</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Foram utilizados
+			todos os tipos
+			pelo
+			app.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Passar dados via hierarquia de componentes, ou seja, usando @Input ou
+			@Output.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Ambos foram
+			utilizados em
+			comunicações de componentes
+			pai-filho, para passar dados ou avisar ao outro componente quando fechar um formulário de cadastro, por
+			exemplo.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Mapear componentes à rotas no módulo de rotas.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim,
+			app-routing.module.ts.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Criar navegação entre páginas por meio de rotas.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim, no
+			menu.component.html (aliado
+			às rotas do app-routing.module.ts).
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Passar dados entre componentes que representam diferentes telas via
+			parâmetros
+			de rotas.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Esta página
+			representa tanto o
+			Ajuda
+			quanto o Sobre, variando o texto conforme o parâmetro da rota (?pagina=...)
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Validar campos do formulário com REGEX e apresentar os erros.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Todos os
+			formulários possuem
+			validações, tanto com as validações padrão do Angular Validator, quanto com REGEX para evitar caracteres
+			especiais, outros para validar números, etc., e também foram
+			criadas validações customizadas (validação de formato de hora e de data, por exemplo), já que as oferecidas
+			pelo Angular não foram suficientes.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Desabilitar o botão de submit enquanto o formulário está inválido.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Fazer requisições a API com tratamento da resposta com Promises ou
+			Observables.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Foram utilizados
+			Observables por
+			todo o app. Promises foram utilizadas
+			em uma das features quando foram requisitos obrigatórios na Atividade 10, mas a partir da Atividade 11
+			foram
+			substituídas pelos Observables. No projeto final existe um uso de Promise para fazer alguns sleeps na thread
+			de
+			cadastro de ciclo (muitas requisições seguidas ao JSON-Server crasham a API). Foram
+			utilizados, também, os Subjects para
+			controle do estado de algumas variáveis que compartilham informações por mais de um componente (não foi
+			utilizada
+			nenhuma biblioteca externa de gerenciamento de estado - como o NgRx - somente foram utilizados os padrões do
+			Angular: Subjects com Observables em um
+			Service a parte para centralização do gerenciamento de estados).
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Cadastrar uma entidade no JSON Server.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Os Ciclos,
+			Blocos, Estudos e
+			Disciplinas estão
+			cadastrados no JSON-Server, logo são 4 entidades diferentes. <span
+				class="mdi mdi-18px mdi-emoticon-happy-outline"></span>
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Apresentar uma lista de dados com a diretiva estrutural ngFor.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Usar a diretiva ngIf</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Formatar a apresentação de dados com Pipes.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Em qualquer lugar
+			que apareça o
+			nome
+			do ciclo ou o
+			nome da disciplina há um uso de Pipe: {{ "{{ disciplina.nome | titlecase }}" }}.
+		</p>
+		<p><input type="checkbox" checked /> &nbsp;Build e deploy da aplicação.</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Github Pages,
+			aqui estamos! <span class="mdi mdi-18px mdi-emoticon-cool-outline"></span>
+		</p>
+	</div>
+</div>
+<div class="column" *ngIf="pagina == 'ajuda'">
+	<h1 class="is-size-1 is-title has-text-weight-bold has-text-link">Ajuda</h1>
+	<div class="mx-5">
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			O que fazer? Por onde começar a estudar?
+		</p>
+		<p class="mt-3 has-text-justified">
+			Primeiro é necessário decidir qual é o objetivo a ser atingido. Estudo precisa ser direcionado, se
+			o objetivo é
+			atingir uma aprovação em um concurso ou vestibular, uma certificação ou simplesmente se
+			aperfeiçoar
+			em alguma coisa que requeira um tempo de dedicação aos estudos, é preciso direcionar para escolher melhor
+			como dividir o tempo de estudos.
+		</p>
+		<p class="mt-3 has-text-justified">
+			Um bom planejamento começa ponderando como será a divisão de tempo para cada uma das disciplinas que serão
+			estudadas. Se o aluno pretende passar em uma prova na qual Química tem peso 10 e Geografia tem peso 2
+			(supondo um mesmo número de questões para ambas), obviamente que o rateio de tempo tem que pender mais para
+			Química do que para Geografia. Caso o aluno não saiba como fazer isso, a melhor solução é procurar alguém
+			que já passou na prova desejada para que o oriente da melhor forma e que não seja perdido tempo
+			estudando o que não deveria ou priorizando assuntos errados.
+		</p>
+		<p class="mt-3 has-text-justified">
+			Feita a análise do que precisa ser estudado e a divisão do tempo de estudo pelas disciplinas, é hora de
+			cadastrar o ciclo. Primeiramente devem ser cadastradas as disciplinas que ficarão disponíveis no ciclo.
+			Depois disso, é iniciar a criação do ciclo de modo que seja respeitado o planejamento da fase anterior.
+		</p>
+		<p class="mt-3 has-text-justified">
+			No final, é realizar o estudo e sempre anotar o que foi estudado no ciclo de estudos, para que se tenha um
+			controle do tempo estudado, além de observações dos estudos tempestivas e detalhadas para melhor tomada de
+			decisões quanto ao
+			planejamento e execução. Por exemplo, desempenho insatisfatório em determinada matéria pode ser comprovado
+			pelas
+			anotações e cálculos de médias em questões com desempenho inferior a determinado percentual, ajudando a
+			pensar em como subir a
+			média (precisa de mais horas de estudo semanais da disciplina? Revisões mais longas? Realizar mais questões
+			de provas
+			anteriores? Algum livro específico com melhor profundidade dos assuntos?). Se o aluno não tiver confiança de
+			como proceder e/ou nem na criação ou execução de seu próprio plano, a melhor solução é contratar um
+			professor experiente na prova que deseja ser aprovado para
+			ser melhor orientado.
+		</p>
+		<hr />
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			Como resetar o sistema?
+		</p>
+		<p class="mt-3 has-text-justified">
+			Colar o código abaixo no <i>db.json</i> do diretório raíz, salvar e F5 para refresh da página:
+		</p>
+		<pre class="mt-4">
+{{ "{" }}
+	"disciplinas": [],
+	"ciclos": [],
+	"blocos": [],
+	"estudos": []
+{{ "}" }}
+</pre>
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			Tem um sistema pré-preenchido para utilizar?
+		</p>
+		<p class="mt-3 has-text-justified">
+			Sim! Delete o <i>db.json</i> e renomeie o <i>db2.json</i> para <i>db.json</i> (ambos localizados na raíz do
+			projeto).
+		</p>
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			E se o sistema apresentar erros e não funcionar?
+		</p>
+		<p class="mt-3 has-text-justified">
+			Provavelmente o JSON-Server não está executando, é preciso rodar localmente na porta 3000 para que as
+			funcionalidades de API funcionem <i>(npm run server)</i>.
+		</p>
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			O que é passível de alteração e o que não é nas entidades do sistema?
+		</p>
+		<p class="mt-3 has-text-justified">
+			Somente as disciplinas e os estudos são editáveis (ou seja, possuem botão "editar disciplina"/"editar
+			estudos"), o ciclo e os blocos não são. Isso é para prevenir
+			inconsistências no sistema, já que se fosse possível editar os blocos e os ciclos poderia ter um caso de uma
+			semana com menos horas de estudo planejadas do que outras. A consistência deve ser preservada para quando
+			precisar ser
+			realizada uma análise do quantitativo de estudos (além de outras métricas como cumprimento das rodadas no
+			tempo
+			planejado, avaliação do percentual de acertos nas questões, etc.) para se ter comparação de evolução
+			dos estudos entre uma
+			semana e outra. Se houvessem semanas diferentes uma das outras não teria como realizar uma comparação
+			objetiva. Assim,
+			caso haja a necessidade de incluir ou excluir horas de estudos (aka. adicionar ou remover blocos), deve-se
+			criar um
+			ciclo novo para que haja estatísticas novas baseadas nos quantitivos informados no ciclo (que serão fixos e
+			consistentes
+			durante o tempo de vida do ciclo).
+		</p>
+		<p class="mt-3 has-text-justified has-text-weight-bold">
+			Qual era o escopo do projeto combinado na atividade 2 e o que foi cumprido?
+		</p>
+		<p class="mt-3 has-text-justified mb-4">
+			O documento enviado e aprovado foi:
+		</p>
+		<div class="content">
+			<blockquote>
+				O sistema será single user (não haverá autenticação e nem nada, quando abre o sistema o aluno já cai na
+				tela
+				principal
+				do ciclo, se existir, ou de cadastro de ciclo, se não existir). Cadastrando um ciclo novo significa
+				excluir
+				o ciclo
+				antigo.<br /><br />
+				Para o cadastro do ciclo, é necessário informar blocos de estudos. Esses blocos basicamente são a
+				informações dos
+				fragmentos do ciclo que o aluno precisa estudar. Assim, o bloco conterá o tempo total de estudo
+				necessário a
+				ser
+				realizado e a disciplina a ser estudada. Não é possível cadastrar blocos no ciclo sem que haja
+				disciplinas
+				pré-cadastradas.<br /><br />
+				Depois que o ciclo está cadastrado, hora de visualizá-lo. Mostra o ciclo para o aluno, e ele pode clicar
+				nos
+				fragmentos
+				para verificar se já foram estudados ou não, e se já foram, o quanto foram. Os blocos podem, sim,
+				ficarem
+				parcialmente
+				estudados, no caso de o aluno ter iniciado um estudo de Contabilidade de 2H por exemplo, e, depois de 40
+				minutos, ter
+				que parar para fazer outra coisa. Antes de sair, preenche o bloco com o tempo parcial estudado. Quando
+				ele
+				retornar aos
+				estudos, o bloco de Contabilidade estará incompleto e precisará ser finalizado.<br /><br />
+				Após a finalização dos estudos, o aluno volta para o bloco e nesse momento ele preenche um estudo. O
+				estudo
+				será uma
+				entidade diferente de bloco, apesar de que um estudo está relacionado a um bloco e um bloco pode ter
+				vários
+				estudos
+				nele, de modo que o estudo carregará informações como o quanto de tempo foi estudado, algum comentário
+				do
+				estudo
+				realizado, se houve realização de questões (total de questões realizadas e quantos acertos, em caso
+				positivo). Nisso
+				começa-se a registrar estatísticas do estudo realizado (tanto em cumprimento da meta quanto em
+				desempenho de
+				questões).<br /><br />
+				Após concluído todo preenchimento de estudos dos blocos, está concluída a “rodada” de estudos (se o
+				ciclo
+				foi planejado
+				para ter 20 horas de estudos a serem cumpridos em 1 semana, “rodada” é o termo que eu uso para a
+				conclusão
+				dessas 20
+				horas de estudos semanais). Assim que a rodada é concluída (aka. o aluno preenche o último estudo da
+				rodada), ele volta
+				ao primeiro bloco e inicia o segundo estudo do bloco, e assim sucessivamente até que se conclua mais uma
+				rodada, e mais
+				uma, e mais uma até que o ciclo seja alterado.<br /><br />
+				O planejamento do ciclo e quando será alterado o ciclo é baseado na decisão de planejamento estratégico
+				do
+				coach do
+				aluno ou o próprio aluno, caso esteja estudando por conta, sem acompanhamento especializado.<br /><br />
+				Esse planejamento pode ser ajustado conforme a disciplina de Angular avança, uma vez que eu uso VueJS e
+				não
+				sei
+				exatamente o que o Angular provê ou não, e nem qual a dificuldade de implementação de recursos dele,
+				essa
+				descrição é
+				até simplista para o que eu planejo, mas a essência do sistema é essa. No início eu citei que o ciclo
+				novo
+				deleta o
+				antigo, mas dependendo da forma de persistência e facilidade é possível inativar o ciclo antigo,
+				mantendo
+				histórico dos
+				estudos, e criar um ciclo novo ativo sem perder o anterior, mas esse tipo de decisão de refinamento
+				dependerá de quanto
+				será demandado na disciplina em termos de tempo e do que eu tenho disponível.<br /><br />
+
+				Entidades<br /><br />
+
+				CICLO 1-N BLOCO<br />
+				BLOCO N-1 DISCIPLINA<br />
+				BLOCO 1-N ESTUDO
+			</blockquote>
+		</div>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Sistema single user, cadastrando novo ciclo exclui o anterior ou
+			inativar o ciclo antigo
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> O ciclo é
+			inativado e o histórico é mantido, só não foi implementado nenhuma funcionalidade para visualização. Como
+			o que já tem já cobre todos os requisitos do Checklist da disciplina, não será implementado.
+		</p>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Para cadastrar o ciclo, precisa informar os blocos. Não é possível
+			cadastrar blocos sem disciplinas.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Isso. E precisa
+			informar o nome do ciclo.
+		</p>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Aluno verifica o ciclo e pode clicar nos fragmentos para verificar
+			se já foram estudados ou não.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play">O aluno pode fazer isso,
+				e também
+				pode ver uma prévia do quantitativo estudado do bloco já na visualização externa do ciclo, não
+				precisando entrar
+				no bloco caso já julgue suficiente a quantidade de estudos realizada do bloco.
+			</span>
+		</p>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Os blocos podem ficar com estudos parciais, e retomar para preencher
+			o restante.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim, e cadastros
+			de estudos
+			sucessivos vão incrementando o tempo total de estudos do bloco até atingir a meta. Se o aluno decidir que
+			quer extrapolar
+			a meta, sem problemas também, os cadastros de estudos não são bloqueados após a conclusão de estudos.
+		</p>
+		<div class="content mt-4 mb-4 has-text-right">
+			<blockquote>"Não vamos colocar meta. Vamos deixar a meta aberta, mas quando atingirmos a meta, vamos dobrar
+				a meta."<br />
+				<b>- Rousseff, Dilma.</b>
+			</blockquote>
+		</div>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Ciclo 1 -> N Blocos. Bloco 1 -> N Estudos. Estudos carregam
+			informações
+			do que foi estudado, questões, tempo estudado.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> Sim.
+		</p>
+		<p class="mt-4 has-text-justified">
+			<input type="checkbox" checked /> &nbsp;Terminada a rodada, o aluno volta para o primeiro bloco e estuda de
+			novo. E vai estudando tudo, e voltando até eventualmente mudar o ciclo.
+		</p>
+		<p class="has-text-link has-text-weight-bold ml-5"><span class="mdi mdi-18px mdi-play"></span> A mudança de
+			rodada não é
+			automática, é necessária a intervenção do aluno para que seja criada nova rodada (botão "Gerenciar rodadas"
+			no canto superior direito do ciclo), onde o aluno pode criar novas rodadas como também mudar de rodadas para
+			visualizar os estudos mais antigos (somente os blocos de estudos mais antigos, os ciclos não).
+		</p>
+	</div>
+</div>

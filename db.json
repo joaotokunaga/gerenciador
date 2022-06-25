@@ -1,0 +1,228 @@
+{
+  "disciplinas": [
+    {
+      "nome": "Português",
+      "id": 1
+    },
+    {
+      "nome": "Matemática básica",
+      "id": 2
+    },
+    {
+      "nome": "Matemática financeira",
+      "id": 3
+    },
+    {
+      "nome": "estatística",
+      "id": 4
+    },
+    {
+      "nome": "Raciocínio Lógico Quantitativo",
+      "id": 5
+    },
+    {
+      "nome": "Administração Geral",
+      "id": 6
+    },
+    {
+      "nome": "Administração Pública",
+      "id": 7
+    },
+    {
+      "nome": "Administração Financeira e Orçamentária",
+      "id": 8
+    },
+    {
+      "nome": "Direito Administrativo",
+      "id": 9
+    },
+    {
+      "nome": "Direito Constitucional",
+      "id": 10
+    },
+    {
+      "nome": "Inglês",
+      "id": 11
+    },
+    {
+      "nome": "espanhol",
+      "id": 12
+    },
+    {
+      "nome": "Comércio Internacional",
+      "id": 13
+    },
+    {
+      "nome": "Legislação Tributária Federal",
+      "id": 14
+    },
+    {
+      "nome": "Legislação Aduaneira",
+      "id": 15
+    },
+    {
+      "nome": "Direito Tributário",
+      "id": 16
+    },
+    {
+      "nome": "Direito Previdenciário",
+      "id": 17
+    },
+    {
+      "nome": "Auditoria",
+      "id": 18
+    },
+    {
+      "nome": "Contabilidade Geral e Avançada",
+      "id": 19
+    }
+  ],
+  "ciclos": [
+    {
+      "nome": "Receita Federal",
+      "rodadaAtual": 1,
+      "rodadaUltima": 2,
+      "id": 1
+    }
+  ],
+  "blocos": [
+    {
+      "tempo": "2:00h",
+      "cicloId": 1,
+      "disciplinaId": 1,
+      "id": 1
+    },
+    {
+      "tempo": "3:00h",
+      "cicloId": 1,
+      "disciplinaId": 16,
+      "id": 2
+    },
+    {
+      "tempo": "3:00h",
+      "cicloId": 1,
+      "disciplinaId": 13,
+      "id": 3
+    },
+    {
+      "tempo": "5:00h",
+      "cicloId": 1,
+      "disciplinaId": 19,
+      "id": 4
+    },
+    {
+      "tempo": "3:00h",
+      "cicloId": 1,
+      "disciplinaId": 18,
+      "id": 5
+    },
+    {
+      "tempo": "1:30h",
+      "cicloId": 1,
+      "disciplinaId": 11,
+      "id": 6
+    }
+  ],
+  "estudos": [
+    {
+      "blocoId": 1,
+      "tempo": "2:00h",
+      "data": "20/06/2022",
+      "conteudo": "Conteúdo estudado da pg. 1 à 20 da apostila aula 1.",
+      "rodada": 1,
+      "questoesRealizadas": null,
+      "questoesAcertadas": null,
+      "id": 1
+    },
+    {
+      "blocoId": 1,
+      "tempo": "0:15h",
+      "data": "22/06/2022",
+      "conteudo": "Cadastrei errado. Me deleta pls.",
+      "rodada": 1,
+      "questoesRealizadas": null,
+      "questoesAcertadas": null,
+      "id": 2
+    },
+    {
+      "blocoId": 2,
+      "tempo": "3:30h",
+      "data": "23/06/2022",
+      "conteudo": "Estudei até extra!",
+      "rodada": 1,
+      "questoesRealizadas": 15,
+      "questoesAcertadas": 10,
+      "id": 3
+    },
+    {
+      "blocoId": 3,
+      "tempo": "3:00h",
+      "data": "23/06/2022",
+      "conteudo": "Fui mal pra caramba nas questões :(",
+      "rodada": 1,
+      "questoesRealizadas": 30,
+      "questoesAcertadas": 3,
+      "id": 4
+    },
+    {
+      "blocoId": 4,
+      "tempo": "5:00h",
+      "data": "23/06/2022",
+      "conteudo": "Estudo normal da apostila pg 50 à 150.",
+      "rodada": 1,
+      "questoesRealizadas": null,
+      "questoesAcertadas": null,
+      "id": 5
+    },
+    {
+      "blocoId": 5,
+      "tempo": "3:00h",
+      "data": "23/06/2022",
+      "conteudo": "Gabaritei questionário sobre Papéis de Auditoria.",
+      "rodada": 1,
+      "questoesRealizadas": 10,
+      "questoesAcertadas": 10,
+      "id": 6
+    },
+    {
+      "blocoId": 6,
+      "tempo": "1:35h",
+      "data": "23/06/2022",
+      "conteudo": "Revisão dos principais tópicos gramaticais.",
+      "rodada": 1,
+      "questoesRealizadas": null,
+      "questoesAcertadas": null,
+      "id": 7
+    },
+    {
+      "blocoId": 1,
+      "tempo": "1:00h",
+      "data": "24/06/2022",
+      "conteudo": "Resolvidas algumas questões mas tive que parar para consulta médica, seguir às questões da apostila a partir da questão 18.",
+      "rodada": 2,
+      "questoesRealizadas": 10,
+      "questoesAcertadas": 8,
+      "id": 8
+    },
+    {
+      "blocoId": 5,
+      "tempo": "3:20h",
+      "data": "24/06/2022",
+      "conteudo": "Revisado todo o conteúdo de Procedimentos de Auditoria, além de realização de questões a respeito de Amostragem de Auditoria",
+      "rodada": 2,
+      "questoesRealizadas": 40,
+      "questoesAcertadas": 37,
+      "id": 9
+    },
+    {
+      "blocoId": 4,
+      "tempo": "2:00h",
+      "data": "25/06/2022",
+      "conteudo": "Realização de questões sobre Demonstração de Fluxo de Caixa e Demonstração do Resultado. Continuar resolvendo questões do assunto de Demonstração das Mutações do Patrimônio Líquido.",
+      "rodada": 2,
+      "questoesRealizadas": 50,
+      "questoesAcertadas": 37,
+      "id": 10
+    }
+  ]
+}

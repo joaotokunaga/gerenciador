@@ -1,0 +1,27 @@
+<div style="width: 300px;">
+	<h1 class="has-text-link has-text-weight-bold is-size-5 mb-1">Status da rodada:</h1>
+	<p class="is-size-6">Rodada atual: <b>#{{ rodadaAtual }}</b></p>
+	<p class="is-size-6">Última rodada: <b>#{{ rodadaUltima }}</b></p>
+	<article class="message is-link mt-3" *ngIf="textoRodadaCriada != ''">
+		<div class="message-body has-text-justified">
+			{{ textoRodadaCriada }}
+		</div>
+	</article>
+	<article class="message is-link mt-3" *ngIf="textoRodadaMudada != ''">
+		<div class="message-body has-text-justified">
+			{{ textoRodadaMudada }}
+		</div>
+	</article>
+	<div class="mt-3" *ngIf="textoRodadaCriada == '' && textoRodadaMudada == ''"></div>
+	<div class="columns is-multiline has-text-centered">
+		<div class="column is-full pb-2">
+			<hr class="mt-0 mb-4" />
+			<button class="button is-link" (click)="criarRodada()">Criar nova rodada</button>
+			<hr class="mt-4 mb-0" />
+		</div>
+		<div class="column is-full">
+			<input type="number" class="input" required [(ngModel)]="rodadaAMudar" maxlength="3" />
+			<button class="button mt-3 is-dark" (click)="mudarRodada()">Mudar rodada</button>
+		</div>
+	</div>
+</div>

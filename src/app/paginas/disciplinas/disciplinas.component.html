@@ -1,0 +1,41 @@
+<h1 class="title is-4">Disciplinas</h1>
+<hr class="mb-2" />
+<div *ngIf="disciplinas !== undefined && disciplinas.length > 0; else semDisciplinas">
+	<table class="table is-fullwidth is-hoverable">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let disciplina of disciplinas">
+				<th style="vertical-align: middle;">{{ disciplina.nome | titlecase }}</th>
+				<td>
+					<button class="button is-link" (click)="editar(disciplina)">Editar</button>&nbsp;
+					<button class="button is-danger" (click)="excluir(disciplina.id!)">Excluir</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<ng-template #semDisciplinas>
+	<article class="message is-danger mt-5">
+		<div class="message-body">
+			Não há disciplinas cadastradas.
+		</div>
+	</article>
+</ng-template>
+<hr />
+<div *ngIf="mostrarBotaoCadastrar">
+	<button class="button is-link" (click)="formDisciplina('cadastrar')">Cadastrar
+		disciplina</button>
+	<hr />
+</div>
+<div *ngIf="mostrarFormCadastro">
+	<app-formulario-disciplinas (fechaFormulario)="formDisciplina($event)"></app-formulario-disciplinas>
+</div>
+<div *ngIf="mostrarFormEditar">
+	<app-formulario-disciplinas (fechaFormulario)="formDisciplina($event)" [disciplina]="disciplinaEdit">
+	</app-formulario-disciplinas>
+</div>
