@@ -1,0 +1,122 @@
+<form [formGroup]="formulario" (ngSubmit)="cadastrarCiclo()">
+	<div class="field">
+		<label class="label">Nome do ciclo <span class="has-text-danger is-title">*</span></label>
+		<div class="control">
+			<input class="input" type="text" placeholder="Digite o nome do ciclo..." formControlName="nome">
+			<div *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="nome?.errors?.['required']">
+					O nome do ciclo é obrigatório.
+				</div>
+				<div *ngIf="nome?.errors?.['minlength']">
+					O tamanho mínimo para o nome do ciclo é de 3 caracteres.
+				</div>
+				<div *ngIf="nome?.errors?.['pattern']">
+					O nome do ciclo somente deve conter letras, números e espaços.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="blocos.controls.length > 0; else semBlocos">
+		<label class="label">
+			Blocos do ciclo <span class="has-text-danger">{{ formulario.get('nome')?.value | titlecase }}</span>
+			- total de horas do ciclo: <span class="has-text-link">{{ totalHorasCiclo }}</span>
+		</label>
+		<hr class="mt-2" />
+		<div class="columns is-multiline is-vcentered">
+			<ng-container formArrayName="blocos">
+				<ng-container *ngFor="let grupoBlocos of blocos.controls; let index = index">
+					<div class="column is-half-tablet is-one-third-desktop" [formGroupName]="index">
+						<div class="card has-background-light pb-2" style="border: 1px solid rgb(190, 190, 190);">
+							<div class="column mx-2 mb-0">
+								<label class="label">Tempo a estudar <span
+										class="has-text-danger is-title">*</span></label>
+								<div class="select is-small">
+									<select formControlName="tempo" (change)="recalculaHoraCiclo()">
+										<option>0:15h</option>
+										<option>0:30h</option>
+										<option>0:45h</option>
+										<option>1:00h</option>
+										<option>1:15h</option>
+										<option>1:30h</option>
+										<option>1:45h</option>
+										<option>2:00h</option>
+										<option>2:15h</option>
+										<option>2:30h</option>
+										<option>2:45h</option>
+										<option>3:00h</option>
+										<option>3:15h</option>
+										<option>3:30h</option>
+										<option>3:45h</option>
+										<option>4:00h</option>
+										<option>4:15h</option>
+										<option>4:30h</option>
+										<option>4:45h</option>
+										<option>5:00h</option>
+										<option>5:30h</option>
+										<option>6:00h</option>
+										<option>6:30h</option>
+										<option>7:00h</option>
+										<option>7:30h</option>
+										<option>8:00h</option>
+										<option>8:30h</option>
+										<option>9:00h</option>
+										<option>9:30h</option>
+										<option>10:00h</option>
+									</select>
+								</div>
+							</div>
+							<div class="column mx-2 mb-0 pt-0">
+								<label class="label">Disciplina <span class="has-text-danger is-title">*</span></label>
+								<div class="select is-small">
+									<select formControlName="disciplinaNome">
+										<option *ngFor="let disciplina of disciplinas">{{
+											disciplina.nome | titlecase }}
+										</option>
+									</select>
+								</div>
+							</div>
+							<div class="has-text-centered">
+								<button class="button is-danger is-small" type="button"
+									(click)="deletarBloco(index)">Deletar
+									bloco</button>
+							</div>
+						</div>
+					</div>
+				</ng-container>
+			</ng-container>
+		</div>
+		<hr />
+	</div>
+	<ng-template #semBlocos>
+		<article class="message is-info mt-5">
+			<div class="message-body">
+				Clique em <b>"Novo bloco de estudos"</b> para começar a preencher o ciclo.
+			</div>
+		</article>
+	</ng-template>
+	<div class="field is-grouped">
+		<div class="control">
+			<button type="button" class="button is-info" (click)="novoBloco()">Novo bloco de estudos</button>
+		</div>
+	</div>
+	<div *ngIf="textoCadastrando != ''">
+		<hr class="mt-5 mb-2" />
+		<article class="message is-info mt-5">
+			<div class="message-body">
+				{{ textoCadastrando }}
+			</div>
+		</article>
+	</div>
+	<hr class="mt-5 mb-2" />
+	<div class="mb-3 mt-0"><span class="has-text-danger is-size-7">* campos obrigatórios</span></div>
+	<div class="field is-grouped">
+		<div class="control">
+			<button class="button is-link" [disabled]="!formulario?.valid || blocos.length == 0">Cadastrar
+				ciclo</button>
+		</div>
+		<div class="control">
+			<button type="button" class="button is-link is-light" (click)="fecharFormulario('fechar')">Cancelar</button>
+		</div>
+	</div>
+</form>

@@ -1,4 +1,4 @@
-<div class="tabs is-fullwidth">
+<div class="tabs is-fullwidth is-hidden-mobile">
 	<ul>
 		<li [class]="(active == 'ciclo') ? 'is-active' : ''">
 			<a routerLink="">
@@ -10,10 +10,38 @@
 				<span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Disciplinas</span>
 			</a>
 		</li>
-		<li [class]="(active == 'form') ? 'is-active' : ''">
-			<a routerLink="form">
-				<span class="mdi mdi-24px mdi-book-open-variant"></span>&nbsp;&nbsp;<span>Observables atividade
-					11</span>
+		<li [class]="(active == 'ajuda') ? 'is-active' : ''">
+			<a [routerLink]="['misc']" [queryParams]="{ pagina: 'ajuda' }">
+				<span class="mdi mdi-24px mdi-help"></span>&nbsp;&nbsp;<span>Ajuda</span>
+			</a>
+		</li>
+		<li [class]="(active == 'sobre') ? 'is-active' : ''">
+			<a [routerLink]="['misc']" [queryParams]="{ pagina: 'sobre' }">
+				<span class="mdi mdi-24px mdi-information-variant"></span>&nbsp;&nbsp;<span>Sobre</span>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="tabs is-fullwidth is-hidden-tablet">
+	<ul>
+		<li [class]="(active == 'ciclo') ? 'is-active' : ''">
+			<a routerLink="">
+				<span class="mdi mdi-24px mdi-dots-circle"></span>
+			</a>
+		</li>
+		<li [class]="(active == 'disciplinas') ? 'is-active' : ''">
+			<a routerLink="disciplinas">
+				<span class="mdi mdi-24px mdi-book-open-variant"></span>
+			</a>
+		</li>
+		<li [class]="(active == 'ajuda') ? 'is-active' : ''">
+			<a [routerLink]="['misc']" [queryParams]="{ pagina: 'ajuda' }">
+				<span class="mdi mdi-24px mdi-help"></span>
+			</a>
+		</li>
+		<li [class]="(active == 'sobre') ? 'is-active' : ''">
+			<a [routerLink]="['misc']" [queryParams]="{ pagina: 'sobre' }">
+				<span class="mdi mdi-24px mdi-information-variant"></span>
 			</a>
 		</li>
 	</ul>

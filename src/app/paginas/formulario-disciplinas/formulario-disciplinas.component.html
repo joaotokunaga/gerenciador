@@ -1,0 +1,34 @@
+<form [formGroup]="formulario" (ngSubmit)="cadastrarDisciplina()">
+	<div class="field">
+		<label class="label">Nome da disciplina <span class="has-text-danger is-title">*</span></label>
+		<div class="control">
+			<div *ngIf="disciplina == undefined; else disciplinaExiste">
+				<input class="input" type="text" placeholder="Digite o nome da disciplina..." formControlName="nome">
+			</div>
+			<ng-template #disciplinaExiste>
+				<input class="input" type="text" formControlName="nome">
+				<input type="hidden" formControlName="id">
+			</ng-template>
+			<div *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)"
+				class="has-text-danger has-text-weight-bold is-size-7 mt-2">
+				<div *ngIf="nome?.errors?.['required']">
+					O nome da disciplina é obrigatório.
+				</div>
+				<div *ngIf="nome?.errors?.['minlength']">
+					O tamanho mínimo para o nome da disciplina é de 3 caracteres.
+				</div>
+				<div *ngIf="nome?.errors?.['pattern']">
+					O nome da disciplina somente deve conter letras, números e espaços.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="field is-grouped">
+		<div class="control">
+			<button class="button is-link" [disabled]="!formulario?.valid">{{ buttonText }}</button>
+		</div>
+		<div class="control">
+			<button type="button" class="button is-link is-light" (click)="fecharFormulario()">Cancelar</button>
+		</div>
+	</div>
+</form>

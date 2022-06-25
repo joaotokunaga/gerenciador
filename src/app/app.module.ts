@@ -10,9 +10,14 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from "@angular/forms";
 import { CicloComponent } from './paginas/ciclo/ciclo.component';
 import { DisciplinasComponent } from './paginas/disciplinas/disciplinas.component';
-import { RotasComParametroComponent } from './paginas/rotas-com-parametro/rotas-com-parametro.component';
-import { PassandoPropriedadesComponent } from './paginas/passando-propriedades/passando-propriedades.component';
-import { FormularioComponent } from './paginas/formulario/formulario.component';
+import { FormularioDisciplinasComponent } from './paginas/formulario-disciplinas/formulario-disciplinas.component';
+import { FormularioCicloComponent } from './paginas/formulario-ciclo/formulario-ciclo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BlocosDetalhesComponent } from './paginas/blocos-detalhes/blocos-detalhes.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormularioEstudosComponent } from './paginas/formulario-estudos/formulario-estudos.component';
+import { RodadaComponent } from './paginas/rodada/rodada.component';
+import { MiscComponent } from './paginas/misc/misc.component';
 
 @NgModule({
 	declarations: [
@@ -22,15 +27,20 @@ import { FormularioComponent } from './paginas/formulario/formulario.component';
 		MenuComponent,
 		CicloComponent,
 		DisciplinasComponent,
-		RotasComParametroComponent,
-		PassandoPropriedadesComponent,
-		FormularioComponent
+		FormularioDisciplinasComponent,
+		FormularioCicloComponent,
+		BlocosDetalhesComponent,
+		FormularioEstudosComponent,
+		RodadaComponent,
+		MiscComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
+		MatDialogModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

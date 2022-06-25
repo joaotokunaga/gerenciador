@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RotasComParametroComponent } from './rotas-com-parametro.component';
+import { FormularioEstudosComponent } from './formulario-estudos.component';
 
-describe('RotasComParametroComponent', () => {
-  let component: RotasComParametroComponent;
-  let fixture: ComponentFixture<RotasComParametroComponent>;
+describe('FormularioEstudosComponent', () => {
+  let component: FormularioEstudosComponent;
+  let fixture: ComponentFixture<FormularioEstudosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RotasComParametroComponent ]
+      declarations: [ FormularioEstudosComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RotasComParametroComponent);
+    fixture = TestBed.createComponent(FormularioEstudosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
